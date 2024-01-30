@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  database:
+    image: 'postgres:15.2'
+    container_name: myPostgres
+    ports:
+      - '5432:5432'
+    environment:
+      - 'POSTGRES_USER=admin'
+      - 'POSTGRES_DB=investhub'
+      - 'POSTGRES_PASSWORD=1234'
+    networks:
+      - myNetwork
+    hostname: localhost
+
+networks:
+  myNetwork:
+    driver: bridge

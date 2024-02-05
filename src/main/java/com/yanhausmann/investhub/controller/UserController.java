@@ -1,5 +1,6 @@
 package com.yanhausmann.investhub.controller;
 
+import com.yanhausmann.investhub.dto.CreateAccountDTO;
 import com.yanhausmann.investhub.dto.CreateUserDTO;
 import com.yanhausmann.investhub.dto.UpdateUserDTO;
 import com.yanhausmann.investhub.entity.User;
@@ -53,7 +54,12 @@ public class UserController {
     public ResponseEntity<Void> deleteById(@PathVariable("userId") String userId) {
         userService.deleteById(userId);
         return ResponseEntity.noContent().build();
-
     }
 
+    @PostMapping("/{userId}/accounts")
+    public ResponseEntity<Void> deleteById(@PathVariable("userId") String userId,
+                                           @RequestBody CreateAccountDTO createAccountDTO){
+        userService.createAccount(userId, createAccountDTO);
+        return ResponseEntity.ok().build();
+    }
 }

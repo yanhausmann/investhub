@@ -1,5 +1,6 @@
 package com.yanhausmann.investhub.service;
 
+import com.yanhausmann.investhub.dto.AccountResponseDTO;
 import com.yanhausmann.investhub.dto.CreateAccountDTO;
 import com.yanhausmann.investhub.dto.CreateUserDTO;
 import com.yanhausmann.investhub.dto.UpdateUserDTO;
@@ -108,5 +109,15 @@ public class UserService {
         );
 
         billingAddressRepository.save(billingAddress);
+    }
+
+    public List<AccountResponseDTO> ListAccounts(String userId) {
+        var user = userRepository.findById(UUID.fromString(userId))
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
+
+        return user.getAccounts()
+                .stream()
+                .map(ac -> new AccountResponseDTO(ac.getAccountId().toString(), ac.getDescription()))
+                .toList();
     }
 }

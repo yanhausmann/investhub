@@ -1,5 +1,6 @@
 package com.yanhausmann.investhub.controller;
 
+import com.yanhausmann.investhub.dto.AccountResponseDTO;
 import com.yanhausmann.investhub.dto.CreateAccountDTO;
 import com.yanhausmann.investhub.dto.CreateUserDTO;
 import com.yanhausmann.investhub.dto.UpdateUserDTO;
@@ -61,5 +62,12 @@ public class UserController {
                                            @RequestBody CreateAccountDTO createAccountDTO){
         userService.createAccount(userId, createAccountDTO);
         return ResponseEntity.ok().build();
+    }
+
+    @GetMapping("/{userId}/accounts")
+    public ResponseEntity<List<AccountResponseDTO>> listAccounts(@PathVariable("userId") String userId){
+        var accounts = userService.ListAccounts(userId);
+
+        return ResponseEntity.ok(accounts);
     }
 }

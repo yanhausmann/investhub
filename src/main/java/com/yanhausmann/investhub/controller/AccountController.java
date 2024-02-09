@@ -1,8 +1,7 @@
 package com.yanhausmann.investhub.controller;
 
-import com.yanhausmann.investhub.dto.AccountStockReponseDTO;
-import com.yanhausmann.investhub.dto.AssociateAccountStockDTO;
-import com.yanhausmann.investhub.dto.CreateAccountDTO;
+import com.yanhausmann.investhub.controller.dto.AccountStockReponseDTO;
+import com.yanhausmann.investhub.controller.dto.AssociateAccountStockDTO;
 import com.yanhausmann.investhub.service.AccountService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

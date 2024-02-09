@@ -1,9 +1,9 @@
 package com.yanhausmann.investhub.controller;
 
-import com.yanhausmann.investhub.dto.AccountResponseDTO;
-import com.yanhausmann.investhub.dto.CreateAccountDTO;
-import com.yanhausmann.investhub.dto.CreateUserDTO;
-import com.yanhausmann.investhub.dto.UpdateUserDTO;
+import com.yanhausmann.investhub.controller.dto.AccountResponseDTO;
+import com.yanhausmann.investhub.controller.dto.CreateAccountDTO;
+import com.yanhausmann.investhub.controller.dto.CreateUserDTO;
+import com.yanhausmann.investhub.controller.dto.UpdateUserDTO;
 import com.yanhausmann.investhub.entity.User;
 import com.yanhausmann.investhub.service.UserService;
 import org.springframework.http.ResponseEntity;

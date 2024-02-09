@@ -1,4 +1,4 @@
-package com.yanhausmann.investhub.dto;
+package com.yanhausmann.investhub.controller.dto;
 
 public record UpdateUserDTO(String username, String password) {
 }

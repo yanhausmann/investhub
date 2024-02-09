@@ -1,6 +1,6 @@
 package com.yanhausmann.investhub.service;
 
-import com.yanhausmann.investhub.dto.CreateStockDTO;
+import com.yanhausmann.investhub.controller.dto.CreateStockDTO;
 import com.yanhausmann.investhub.entity.Stock;
 import com.yanhausmann.investhub.repository.StockRepository;
 import org.springframework.stereotype.Service;
@@ -14,10 +14,12 @@ public class StockService {
         this.stockRepository = stockRepository;
     }
 
-    public void createStock(CreateStockDTO createStockDTO) {
+    public void createStock(CreateStockDto createStockDto) {
+
+        // DTO -> ENTITY
         var stock = new Stock(
-                createStockDTO.stockId(),
-                createStockDTO.description()
+                createStockDto.stockId(),
+                createStockDto.description()
         );
 
         stockRepository.save(stock);

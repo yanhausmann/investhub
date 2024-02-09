@@ -18,7 +18,7 @@ public class BillingAddress {
     private Account account;
 
     @Column(name = "street")
-    private String street;
+    private  String street;
 
     @Column(name = "number")
     private Integer number;

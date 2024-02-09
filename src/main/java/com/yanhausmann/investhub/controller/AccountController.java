@@ -1,8 +1,10 @@
 package com.yanhausmann.investhub.controller;
 
-import com.yanhausmann.investhub.controller.dto.AccountStockReponseDTO;
-import com.yanhausmann.investhub.controller.dto.AssociateAccountStockDTO;
+import com.yanhausmann.investhub.dto.AccountStockReponseDTO;
+import com.yanhausmann.investhub.dto.AssociateAccountStockDTO;
+import com.yanhausmann.investhub.dto.CreateAccountDTO;
 import com.yanhausmann.investhub.service.AccountService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,6 +13,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/v1/accounts")
 public class AccountController {
+
 
     private AccountService accountService;
 

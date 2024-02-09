@@ -1,7 +1,7 @@
 package com.yanhausmann.investhub.service;
 
-import com.yanhausmann.investhub.controller.dto.CreateUserDTO;
-import com.yanhausmann.investhub.controller.dto.UpdateUserDTO;
+import com.yanhausmann.investhub.dto.CreateUserDTO;
+import com.yanhausmann.investhub.dto.UpdateUserDTO;
 import com.yanhausmann.investhub.entity.User;
 import com.yanhausmann.investhub.repository.UserRepository;
 import org.junit.jupiter.api.DisplayName;

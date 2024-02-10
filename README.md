@@ -16,10 +16,14 @@ InvestHub é um projeto web desenvolvido para fins de estudo, focado em permitir
 InvestHub utiliza as seguintes tecnologias:
 
  - JUnit e Mockito para testes unitários
- - Keycloak para validação de usuários
+ - Feign Client consumindo API
  - API da bolsa de valores brasileira para obtenção de dados de ações
  - Docker para conteinerização
  - PostgreSQL como banco de dados
+ - Keycloak para validação de usuários
+
+### API
+ - API Brapi - Acesso aos dados da B3
  
  ### Recursos
  - Gerenciamento de Carteira: Os usuários podem adicionar, remover e

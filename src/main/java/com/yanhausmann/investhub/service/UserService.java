@@ -1,9 +1,6 @@
 package com.yanhausmann.investhub.service;
 
-import com.yanhausmann.investhub.dto.AccountResponseDTO;
-import com.yanhausmann.investhub.dto.CreateAccountDTO;
-import com.yanhausmann.investhub.dto.CreateUserDTO;
-import com.yanhausmann.investhub.dto.UpdateUserDTO;
+import com.yanhausmann.investhub.dto.*;
 import com.yanhausmann.investhub.entity.Account;
 import com.yanhausmann.investhub.entity.BillingAddress;
 import com.yanhausmann.investhub.entity.User;
@@ -120,4 +117,15 @@ public class UserService {
                 .map(ac -> new AccountResponseDTO(ac.getAccountId().toString(), ac.getDescription()))
                 .toList();
     }
+
+    public List<UserWithAccountsDTO> listUsersWithAccounts() {
+        List<User> users = userRepository.findAll();
+        List<UserWithAccountsDTO> usersWithAccounts = new ArrayList<>();
+        for (User user : users) {
+            List<AccountResponseDTO> accountResponseDTOs = ListAccounts(user.getUserId().toString());
+            usersWithAccounts.add(new UserWithAccountsDTO(user, accountResponseDTOs));
+        }
+        return usersWithAccounts;
+    }
+
 }

@@ -1,10 +1,7 @@
 package com.yanhausmann.investhub.controller;
 
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import com.yanhausmann.investhub.dto.AccountResponseDTO;
-import com.yanhausmann.investhub.dto.CreateAccountDTO;
-import com.yanhausmann.investhub.dto.CreateUserDTO;
-import com.yanhausmann.investhub.dto.UpdateUserDTO;
+import com.yanhausmann.investhub.dto.*;
 import com.yanhausmann.investhub.entity.User;
 import com.yanhausmann.investhub.service.UserService;
 import org.springframework.http.ResponseEntity;
@@ -71,4 +68,11 @@ public class UserController {
 
         return ResponseEntity.ok(accounts);
     }
+
+    @GetMapping("/all")
+    public ResponseEntity<List<UserWithAccountsDTO>> listUsersWithAccounts() {
+        var usersWithAccounts = userService.listUsersWithAccounts();
+        return ResponseEntity.ok(usersWithAccounts);
+    }
+
 }

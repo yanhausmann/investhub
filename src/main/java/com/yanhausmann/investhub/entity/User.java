@@ -1,9 +1,12 @@
 package com.yanhausmann.investhub.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import jakarta.persistence.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
+import java.io.Serializable;
 import java.time.Instant;
 import java.util.List;
 import java.util.UUID;
@@ -32,6 +35,7 @@ public class User {
     private Instant updatedTimestamp;
 
     @OneToMany(mappedBy = "user")
+    @JsonIgnore
     private List<Account> accounts;
 
 

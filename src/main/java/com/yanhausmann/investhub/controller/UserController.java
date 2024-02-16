@@ -1,5 +1,6 @@
 package com.yanhausmann.investhub.controller;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.yanhausmann.investhub.dto.AccountResponseDTO;
 import com.yanhausmann.investhub.dto.CreateAccountDTO;
 import com.yanhausmann.investhub.dto.CreateUserDTO;
